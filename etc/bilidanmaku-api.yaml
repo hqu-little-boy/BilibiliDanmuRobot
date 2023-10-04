@@ -56,7 +56,7 @@ CronDanmuList:
   # Random为true表示随机发送列表中的一条弹幕, false则是顺序发送
   # 弹幕列表前必须加 -, 无论是否有多条, 切记
   # 想要用秒的时候, 应该是 30 * * * * * * 共六项 表示每分钟的第30秒执行
-  # 不想用秒的时候, 应该是 */1 * * * * 共五项 表示每1分钟执行一次
+  # 不想用秒的时候, 应该是 */1 *WelcomeTimeLimiter * * * 共五项 表示每1分钟执行一次
   - Cron: "*/2 * * * *"
     Random: true
     Danmu:
@@ -206,3 +206,6 @@ ForeignLanguageTranslationInChinese:
   Enabled: false
   AppID: ""
   SecretKey: ""
+
+# 最短多长时间发出下一条的欢迎弹幕，避免欢迎弹幕刷屏
+WelcomeTimeLimiter: 30
